@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #8B7355 0%, #6B5345 100%);
+  min-height: 100vh;
+}
+
+header {
+  background: rgba(245, 235, 220, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  color: #4A3C2F;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 700;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+header nav button {
+  background: none;
+  border: 2px solid #8B6F47;
+  color: #6B5345;
+  padding: 10px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+header nav button:hover {
+  background: #8B6F47;
+  color: #FFF8DC;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 111, 71, 0.4);
+}
+
+.main-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #FFF8DC;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+}
+
+/* Seção de Galeria */
+.gallery-section {
+  background: linear-gradient(135deg, #8B7355 0%, #6B5345 100%);
+}
+
+/* Seção de Preços */
+.prices-section {
+  background: linear-gradient(135deg, #A0826D 0%, #7D6548 100%);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.service-card {
+  background: #F5F5DC;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.service-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 24px;
+  color: #4A3C2F;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.service-description {
+  color: #5A4A3A;
+  font-size: 14px;
+  margin-bottom: 20px;
+  min-height: 40px;
+  line-height: 1.5;
+}
+
+.service-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.service-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #8B6F47;
+}
+
+.service-duration {
+  font-size: 14px;
+  color: #5A4A3A;
+  font-weight: 500;
+}
+
+/* Seção de Agendamento */
+.schedule-section {
+  background: linear-gradient(135deg, #C9A87C 0%, #A68A64 100%);
+}
+
+.calendar-container {
+  background: #F5F5DC;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.schedule-instructions {
+  color: #FFF8DC;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+}
+
+.appointment-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.appointment-form {
+  background: #FAF0E6;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #4A3C2F;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #D2B48C;
+  border-radius: 10px;
+  font-size: 16px;
+  background: #FFFEF0;
+  color: #4A3C2F;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #8B6F47;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #5A4A3A;
+  font-size: 12px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #FFF8DC;
+  font-size: 18px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.form-buttons button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #8B6F47;
+  color: #FFF8DC;
+}
+
+.btn-primary:hover {
+  background: #6B5345;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 111, 71, 0.4);
+}
+
+.btn-secondary {
+  background: #D2B48C;
+  color: #4A3C2F;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: #C9A87C;
+}
+
+footer {
+  background: rgba(53, 41, 31, 0.9);
+  color: #F5DEB3;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .section h2 {
+    font-size: 28px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+}
